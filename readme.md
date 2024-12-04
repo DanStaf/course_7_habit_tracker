@@ -3,6 +3,16 @@
 ## Developing Steps
 
 1. add .gitignore, .env, readme
+2. setup Poetry and Django
+```
+/settings/Python interpreter/Add interpreter/Poetry environment 
+poetry add django==4.2 python-dotenv
+django-admin startproject config .
+python manage.py startapp spa
+python manage.py startapp users
+create DB "spa"
+setup settings.py
+```
 
 ---
 
