@@ -11,13 +11,11 @@ from rest_framework.permissions import BasePermission
 
 class IsOwnerClass(BasePermission):
     """
-    all can view public habits
-    Owners can update and delete public habits
-    Owners can view, update and delete personal habits
+    Owners can update and delete personal habits
+    All can view public habits
     """
 
     message = 'Only owner can operate this habit'
 
     def has_object_permission(self, request, view, obj):
-        # ??? to check
-        return request.user == obj.owner
+        return request.user == obj.user

@@ -24,7 +24,7 @@ class HabitViewSet(viewsets.ModelViewSet):
         new_instance.save()
 
     def get_permissions(self):
-        if self.action in ['update', 'destroy']:
+        if self.action in ['update', 'partial_update', 'destroy']:
             self.permission_classes = [IsOwnerClass]
 
         return super().get_permissions()
