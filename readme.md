@@ -16,12 +16,26 @@ setup settings.py
 3. setup User
 ```
 poetry add djangorestframework djangorestframework-simplejwt django-filter
-setup settings.py
-python manage.py csu
 ```
+- config.settings.py
+- config.urls
+- models
+- admin
+- permissions
+- serializers
+- urls
+- views
+- csu `python manage.py csu`
 
-3. setup Habit
+3. setup Habit model
+- models
+- admin
 
+4. setup Habit endpoints
+- paginators
+- serializers
+- urls
+- views
 
 ---
 
