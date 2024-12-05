@@ -41,7 +41,25 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - urls
 - views
 
-6. 
+6. Валидаторы
+- validators
+- serializers
+
+Телеграм
+
+CORS
+
+Документация
+
+Тесты
+
+Flake8
+
+
+
+
+
+
 
 ---
 

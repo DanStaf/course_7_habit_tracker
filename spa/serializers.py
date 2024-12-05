@@ -1,13 +1,15 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 
-# from online_learning.validators import TextValidator
-
 from spa.models import Habit
+from spa.validators import MaxValueIntValidator
 
 
 class HabitSerializer(ModelSerializer):
     class Meta:
         model = Habit
         fields = "__all__"
-        # validators = [TextValidator(field='url', correct_text='youtube.com')]
+        validators = [
+            MaxValueIntValidator(field='period_days', max_value=7),
+            MaxValueIntValidator(field='duration_sec', max_value=120)
+        ]
