@@ -26,6 +26,8 @@ class Habit(models.Model):
 
     is_public = models.BooleanField(default=False, verbose_name='Признак публичности')
 
+    last_execution_date = models.DateField(null=True, blank=True, verbose_name='Дата последнего выполнения')
+
     def __str__(self):
         return f'Habit: {self.action}'
 

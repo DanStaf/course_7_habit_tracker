@@ -51,7 +51,7 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - https://t.me/BotFather
 - https://core.telegram.org/bots/api
 - poetry add telebot
-- 
+- config: env, settings, tasks, services
 
 CORS
 
@@ -177,7 +177,7 @@ Flake8
 
 `Настроили интеграцию с Телеграмом.`
 
-`Настроили отложенную задачу через Celery.`
++ `Настроили отложенную задачу через Celery.`
 
 ---
 
