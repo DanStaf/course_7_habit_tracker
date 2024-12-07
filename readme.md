@@ -45,7 +45,13 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - validators
 - serializers
 
-Телеграм
+7. Телеграм
+- poetry add celery django-celery-beat redis eventlet
+- config: settings, celery.py, tasks, services / migrate
+- https://t.me/BotFather
+- https://core.telegram.org/bots/api
+- poetry add telebot
+- 
 
 CORS
 
