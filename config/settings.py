@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'users',
     'spa',
     'django_celery_beat',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -153,3 +155,14 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = os.getenv("CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP") == "True"
 
 TG_API_KEY = os.getenv('TG_API_KEY')
+
+
+CORS_ALLOWED_ORIGINS = [
+    '*'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    '*'
+]
+
+CORS_ALLOW_ALL_ORIGINS = False

@@ -54,14 +54,11 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - add tg_id to user model
 - config: env, settings, tasks, services
 
-
-CORS
-
-Документация
-
-Тесты
-
-Flake8
+8. Другое
+- CORS `poetry add django-cors-headers`
+- Документация
+- Тесты
+- Flake8
 
 
 
