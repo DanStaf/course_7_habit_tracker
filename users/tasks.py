@@ -4,7 +4,7 @@ from celery import shared_task
 from django.utils import timezone
 
 from spa.models import Habit
-from users.services import send_message_to_TG
+from users.services import send_messages_to_TG
 
 
 @shared_task
@@ -34,12 +34,16 @@ def send_reminder_to_users():
         # print(message)
 
         if to_do:
-            habit.last_execution_date = today_date
-            habit.save()
-            today_habits.append(habit)
+            if habit.user.tg_id == 1:
+                message = f"Пользователь {habit.user} не заполнил Telegram ID"
+                print(message)
+            else:
+                habit.last_execution_date = today_date
+                habit.save()
+                today_habits.append(habit)
 
-    [print(f"{item} / {item.last_execution_date} / {item.time}") for item in today_habits]
+    send_messages_to_TG(today_habits)
 
-    send_message_to_TG()
+    print("Reminder done")
 
-
+    # [print(f"{item} / {item.last_execution_date} / {item.time}") for item in today_habits]
