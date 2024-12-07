@@ -45,7 +45,15 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - validators
 - serializers
 
-Телеграм
+7. Телеграм
+- poetry add celery django-celery-beat redis eventlet
+- config: settings, celery.py, tasks, services / migrate
+- https://t.me/BotFather
+- https://core.telegram.org/bots/api
+- poetry add telebot
+- add tg_id to user model
+- config: env, settings, tasks, services
+
 
 CORS
 
@@ -169,9 +177,9 @@ Flake8
 Вспомнить, как работать с API Телеграма, можно в разделе «Альтернативная задача»
 в домашке урока Celery.
 
-`Настроили интеграцию с Телеграмом.`
++ `Настроили интеграцию с Телеграмом.`
 
-`Настроили отложенную задачу через Celery.`
++ `Настроили отложенную задачу через Celery.`
 
 ---
 

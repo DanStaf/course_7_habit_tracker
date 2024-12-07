@@ -6,6 +6,8 @@ class User(AbstractUser):
     username = None
 
     email = models.EmailField(verbose_name='Почта', unique=True)
+    tg_id = models.PositiveIntegerField(verbose_name='Telegram ID')
+
 
     # avatar = models.ImageField(null=True, blank=True, verbose_name='Аватар')
     # phone = models.CharField(null=True, blank=True, max_length=150, verbose_name='Телефон')
