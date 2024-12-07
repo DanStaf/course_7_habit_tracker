@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'spa',
     'django_celery_beat',
     'corsheaders',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -158,11 +159,11 @@ TG_API_KEY = os.getenv('TG_API_KEY')
 
 
 CORS_ALLOWED_ORIGINS = [
-    '*'
+    'http://localhost:8000',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    '*'
+    "https://read-and-write.example.com",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False

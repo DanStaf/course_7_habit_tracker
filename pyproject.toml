@@ -19,6 +19,7 @@ redis = "^5.2.1"
 eventlet = "^0.38.0"
 telebot = "^0.0.5"
 django-cors-headers = "^4.6.0"
+drf-yasg = "^1.21.8"
 
 
 [build-system]

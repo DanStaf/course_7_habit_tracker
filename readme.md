@@ -55,7 +55,8 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - config: env, settings, tasks, services
 
 8. Другое
-- CORS `poetry add django-cors-headers`
+`poetry add django-cors-headers drf-yasg`
+- CORS 
 - Документация
 - Тесты
 - Flake8
