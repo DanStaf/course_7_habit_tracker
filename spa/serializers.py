@@ -1,5 +1,4 @@
 from rest_framework.serializers import ModelSerializer
-from rest_framework import serializers
 
 from spa.models import Habit
 from spa.validators import MaxValueIntValidator, is_bonus_valid
@@ -21,14 +20,21 @@ class HabitSerializer(ModelSerializer):
 
         :param:
         self: self.instance is Habit obj.
-        attrs: dict with new data from request, e.g.: attrs = {'period_days': 4}
+        attrs: dict with new data from request,
+        e.g.: attrs = {'period_days': 4}
 
         :return:
         attrs if data is valid
         """
 
-        is_bonus_habit = self._get_actual_value_for_validation(attrs, "is_bonus_habit")
-        bonus_habit = self._get_actual_value_for_validation(attrs, "bonus_habit")
+        is_bonus_habit = self._get_actual_value_for_validation(
+            attrs,
+            "is_bonus_habit"
+        )
+        bonus_habit = self._get_actual_value_for_validation(
+            attrs,
+            "bonus_habit"
+        )
         bonus = self._get_actual_value_for_validation(attrs, "bonus")
 
         is_bonus_valid(is_bonus_habit, bonus_habit, bonus)
