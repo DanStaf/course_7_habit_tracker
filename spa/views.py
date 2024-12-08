@@ -1,5 +1,4 @@
 import rest_framework.permissions
-from django.shortcuts import render
 from rest_framework import viewsets
 
 from spa.models import Habit

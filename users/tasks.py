@@ -27,7 +27,8 @@ def send_reminder_to_users():
                 message += ' - period_days not filled'
                 to_do = False
             else:
-                next_execution_date = habit.last_execution_date + timedelta(days=habit.period_days)
+                next_execution_date = (habit.last_execution_date +
+                                       timedelta(days=habit.period_days))
                 to_do = next_execution_date == today_date  # True, False
                 message += f" / {next_execution_date} = {today_date} / {to_do}"
 
@@ -45,5 +46,3 @@ def send_reminder_to_users():
     send_messages_to_TG(today_habits)
 
     print("Reminder done")
-
-    # [print(f"{item} / {item.last_execution_date} / {item.time}") for item in today_habits]

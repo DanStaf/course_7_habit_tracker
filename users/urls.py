@@ -4,7 +4,8 @@ from rest_framework.permissions import AllowAny
 from users.views import UserViewSet
 from users.apps import UsersConfig
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import (TokenObtainPairView,
+                                            TokenRefreshView)
 
 app_name = UsersConfig.name
 
@@ -13,8 +14,16 @@ router_user.register("", UserViewSet, basename='user')
 
 urlpatterns = [
 
-    path('login/', TokenObtainPairView.as_view(permission_classes=(AllowAny,)), name='login'),
-    path('token/refresh/', TokenRefreshView.as_view(permission_classes=(AllowAny,)), name='token_refresh'),
+    path('login/',
+         TokenObtainPairView.as_view(
+             permission_classes=(AllowAny,)
+         ),
+         name='login'),
+    path('token/refresh/',
+         TokenRefreshView.as_view(
+             permission_classes=(AllowAny,)
+         ),
+         name='token_refresh'),
 
 ]
 

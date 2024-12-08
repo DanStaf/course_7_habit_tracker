@@ -29,7 +29,8 @@ class MaxValueIntValidator:
         # print(f"{data_value} ?<=? {self.max_value} / {result}")
 
         if not result:
-            message = f"Значение {self.field} не должно превышать {self.max_value}"
+            message = (f"Значение {self.field} не должно "
+                       f"превышать {self.max_value}")
             raise serializers.ValidationError(message)
 
 
@@ -41,7 +42,8 @@ def is_bonus_valid(is_bonus_habit, bonus_habit, bonus):
     bonus
     bonus_habit
 
-    В связанные привычки могут попадать только привычки с признаком приятной привычки.
+    В связанные привычки могут попадать только привычки
+    с признаком приятной привычки.
     bonus_habit
     is_bonus_habit
 
@@ -54,19 +56,23 @@ def is_bonus_valid(is_bonus_habit, bonus_habit, bonus):
 
     if is_bonus_habit:
         if bonus_habit or bonus:
-            message = f"У приятной привычки не может быть вознаграждения или связанной привычки."
+            message = ("У приятной привычки не может быть вознаграждения"
+                       " или связанной привычки.")
             raise serializers.ValidationError(message)
     else:
         if bonus and bonus_habit:
-            message = f"Можно заполнить только одно из двух полей (вознаграждение либо связанную привычку)."
+            message = ("Можно заполнить только одно из двух полей "
+                       "(вознаграждение либо связанную привычку).")
             raise serializers.ValidationError(message)
 
         if bonus_habit and not bonus_habit.is_bonus_habit:
-            message = f"В связанные привычки могут попадать только привычки с признаком приятной привычки."
+            message = ("В связанные привычки могут попадать только привычки"
+                       " с признаком приятной привычки.")
             raise serializers.ValidationError(message)
 
         if not bonus and not bonus_habit:
-            message = f"Необходимо заполнить одно из полей: вознаграждение, или связанную привычку, или признак приятной привычки."
+            message = ("Необходимо заполнить одно из полей: вознаграждение, "
+                       "или связанную привычку, или признак приятной привычки")
             raise serializers.ValidationError(message)
 
     # print("bonus is valid")
