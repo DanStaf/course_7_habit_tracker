@@ -60,6 +60,10 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 - Документация
 - Тесты
 - Flake8
+- fixtures
+`python -Xutf8 manage.py dumpdata spa > fixtures/spa_data.json --indent=4`
+`python -Xutf8 manage.py dumpdata auth > fixtures/auth_data.json --indent=4`
+`python -Xutf8 manage.py dumpdata users > fixtures/users_data.json --indent=4`
 
 
 
