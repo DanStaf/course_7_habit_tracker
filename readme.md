@@ -8,6 +8,14 @@
 - приобретение новых полезных привычек
 - искоренению старых плохих привычек.
 
+## Инструкция по запуску:
+
+1) install and start Docker Desktop
+2) Sign out in Docker Desktop
+3) correct chapter 'Docker Engine' in Settings
+4) build image with command for Win: `docker-compose build`
+5) start containers with command for Win: `docker-compose up` or `docker-compose up -d --build`
+
 ### Описание задач
 
 ---
@@ -199,3 +207,9 @@ poetry add djangorestframework djangorestframework-simplejwt django-filter
 `python -Xutf8 manage.py dumpdata spa > fixtures/spa_data.json --indent=4`
 `python -Xutf8 manage.py dumpdata auth > fixtures/auth_data.json --indent=4`
 `python -Xutf8 manage.py dumpdata users > fixtures/users_data.json --indent=4`
+
+9. Docker
+- Dockerfile and docker-compose.yaml
+- .env and .env.sample and settings
+- `pip freeze > requirements.txt`
+- readme.md
